@@ -49,11 +49,17 @@ def button_equal():
         entry.insert(tk.END, f_num - float(second_number))
     elif math_operation == "multiplication":
         entry.insert(tk.END, f_num * float(second_number))
-        #діти на нуль заборонено /помилка
+        #ділити на нуль заборонено /помилка
     elif math_operation == "division":
         if second_number != '0':
             entry.insert(tk.END, f_num / float(second_number))
         else:
             entry.insert(tk.END, "Error: Division by zero")
 
-            
+# Створення графічного інтерфейсу користувача
+root = tk.Tk()
+root.title("Calculator")
+
+#вікно для вводу інформації(цифер)
+entry = tk.Entry(root, width=35, borderwidth=5)
+entry.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
