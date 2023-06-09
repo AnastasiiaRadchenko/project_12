@@ -39,3 +39,21 @@ def button_divide():
     math_operation = "division"
     f_num = float(first_number)
     entry.delete(0, tk.END)
+
+def button_equal():
+    second_number = entry.get()
+    entry.delete(0, tk.END)
+    if math_operation == "addition":
+        entry.insert(tk.END, f_num + float(second_number))
+    elif math_operation == "subtraction":
+        entry.insert(tk.END, f_num - float(second_number))
+    elif math_operation == "multiplication":
+        entry.insert(tk.END, f_num * float(second_number))
+        #діти на нуль заборонено /помилка
+    elif math_operation == "division":
+        if second_number != '0':
+            entry.insert(tk.END, f_num / float(second_number))
+        else:
+            entry.insert(tk.END, "Error: Division by zero")
+
+            
